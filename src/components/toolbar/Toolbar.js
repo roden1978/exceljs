@@ -4,10 +4,11 @@ export class Toolbar extends ExcelComponent {
     // @babel/plugin-proposal-class-properties
     static className = 'excel__toolbar'
 
-    constructor($root) {
+    constructor($root, options) {
         super($root, {
             name: 'Toolbar',
-            listeners: ['click']
+            listeners: [],
+            ...options
         })
     }
 
@@ -30,9 +31,5 @@ export class Toolbar extends ExcelComponent {
             <div class="button">
                 <span class="material-icons">format_underline</span>
             </div>`
-    }
-
-    onClick(event) {
-        console.log(event.target)
     }
 }
