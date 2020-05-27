@@ -8,14 +8,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
- const jsLoaders = () => {
-    const loaders = ['babel-loader']
-
-   if (isDev) {
+ /* const jsLoaders = () => {
+    const loaders = []
+     loaders.push('babel-loader')
+   /!* if (isDev) {
         loaders.push('eslint-loader')
-    }
-}
-/* const jsLoaders = () => {
+    }*!/
+}*/
+ const jsLoaders = () => {
     return {
             loader: 'babel-loader',
             options: {
@@ -23,7 +23,7 @@ const isDev = !isProd
                 plugins: ['@babel/plugin-proposal-class-properties']
             },
         }
-}*/
+}
 const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
 
 module.exports = {
